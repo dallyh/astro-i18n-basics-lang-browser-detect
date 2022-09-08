@@ -1,9 +1,14 @@
 ---
+import {changeLanguage } from "i18next";
+
 export interface Props {
 	title: string;
 }
 
 const { title } = Astro.props as Props;
+// Calling changeLanguage without lng uses the language detector to choose the language to set.
+// https://www.i18next.com/overview/api
+changeLanguage(); 
 ---
 
 <!DOCTYPE html>
