@@ -1,20 +1,23 @@
-import LanguageDetector from 'i18next-browser-languagedetector';
+import LanguageDetector from "i18next-browser-languagedetector";
 
 /** @type {import('astro-i18next').AstroI18nextConfig} */
 export default {
-  defaultLanguage: 'en',
-  supportedLanguages: ['en', 'fr'],
+  defaultLanguage: "en",
+  supportedLanguages: ["en", "fr"],
   i18next: {
     // debug is convenient during development to check for missing keys
     debug: true,
     initImmediate: false,
     backend: {
-      loadPath: './src/locales/{{lng}}.json',
+      loadPath: "./src/locales/{{lng}}.json",
     },
-    detection: {}, // Default detection settings
+    detection: {
+      order: ["path", "navigator", "querystring"],
+      caches: [], // Do not cache anny settings
+    },
   },
   i18nextPlugins: {
-    fsBackend: 'i18next-fs-backend',
-    LanguageDetector: 'i18next-browser-languagedetector',
+    fsBackend: "i18next-fs-backend",
+    LanguageDetector: "i18next-browser-languagedetector",
   },
 };
