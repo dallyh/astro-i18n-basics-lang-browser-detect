@@ -1,5 +1,3 @@
-import LanguageDetector from "i18next-browser-languagedetector";
-
 /** @type {import('astro-i18next').AstroI18nextConfig} */
 export default {
   defaultLanguage: "en",
@@ -13,7 +11,7 @@ export default {
     },
     detection: {
       order: ["path", "navigator", "querystring"],
-      caches: [], // Do not cache anny settings
+      caches: [], // Do not cache any settings
     },
   },
   i18nextPlugins: {
